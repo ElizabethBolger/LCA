@@ -152,7 +152,60 @@ public class LCA <Key extends Comparable <Key>, Value>{
 			return (prefix+"-"+node.key.toString()+"\n" +prettyPrint(node.left,(prefix+" |"))+ prettyPrint(node.right,(prefix+"  ")));
     	}
 		
+  }
+
+	public int height() { 
+		return height(root); 
 	}
+
+
+	private int height(Node x) {
+		if (x == null) {
+			return -1;
+		}
+		else {
+			return 1 + Math.max(height(x.left), height(x.right));
+		}
+	}
+
+	/**
+	 * Median key.
+	 * If the tree has N keys k1 < k2 < k3 < ... < kN, then their median key 
+	 * is the element at position (N+1)/2 (where "/" here is integer division)
+	 *
+	 * @return the median key, or null if the tree is empty.
+	 */
+	public Key median() {
+		if (isEmpty()) return null; //returning null if the bst is empty
+
+		else {
+			int median=(((size(root)+1)/2)-1);   //add 1 to size(root)	
+			//need to change int to key?
+			return intToKey(median);
+		}
+	}
+
+	private Key intToKey(int passedInt) {                       
+		Node node = intToKey(root, passedInt);
+		return node.key;
+	}
+	//find the node with equivalent key given passedInt
+	private Node intToKey(Node node, int passedInt) {     
+		int leftSize = (size(node.left));  
+		
+		//check is it in the left or right subtree
+		if (leftSize > passedInt) {
+			return intToKey(node.left,  passedInt); 
+		}
+		else if (leftSize < passedInt) {
+			return intToKey(node.right, passedInt-leftSize-1); 
+		}
+		else {
+			return node; 
+		}
+	} 
+
+
 
 	
 	public static void main(String[] args) {
