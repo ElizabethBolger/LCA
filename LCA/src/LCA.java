@@ -130,7 +130,30 @@ public class LCA <Key extends Comparable <Key>, Value>{
 	     }
 	     return node;
 	   }
+	
+	
+
+	/**
+	 * Pretty Printing the tree. Each node is on one line -- see assignment for details.
+	 *
+	 * @return a multi-line string with the pretty ASCII picture of the tree.
+	 */
+	public String prettyPrintKeys() {
+		if(isEmpty()) return "-null\n";
+	     return prettyPrint(root,"");
+	}
+	
+	private String prettyPrint(Node node, String prefix) {
+		if (node == null) {
+			return (prefix + "-null\n");
+		}
+		else {
+			
+			return (prefix+"-"+node.key.toString()+"\n" +prettyPrint(node.left,(prefix+" |"))+ prettyPrint(node.right,(prefix+"  ")));
+    	}
 		
+  }
+
 	public int height() { 
 		return height(root); 
 	}
@@ -181,6 +204,7 @@ public class LCA <Key extends Comparable <Key>, Value>{
 			return node; 
 		}
 	} 
+
 
 
 	
