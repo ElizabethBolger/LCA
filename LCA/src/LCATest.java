@@ -146,6 +146,29 @@ public class LCATest {
 	
 	@Test
 	public void testHeight() {
+		LCA<Integer, Integer> LCA = new LCA<Integer, Integer>();
+
+		assertEquals("Testing height", -1, LCA.height());
+
+		LCA.put(7, 7);  
+
+		assertEquals("Testing height", 0, LCA.height());
+
+		LCA.put(8, 8);   
+		LCA.put(3, 3);  
+
+		assertEquals("Testing height", 1, LCA.height());
+
+		LCA.put(1, 1);      
+		LCA.put(2, 2);   
+
+		assertEquals("Testing height", 3, LCA.height());
+
+		LCA.put(6, 6);   
+		LCA.put(4, 4);   
+		LCA.put(5, 5);
+
+		assertEquals("Testing height", 4, LCA.height());
 	}
 	
 	
