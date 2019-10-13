@@ -18,9 +18,9 @@ public class LCA <Key extends Comparable <Key>, Value>{
 
 	}
 	
-	public boolean contains()
+	public boolean contains(Key key)
 	{
-		return true;
+		return get(key) != null;
 	}
 	
 	public boolean isEmpty()
