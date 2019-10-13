@@ -18,19 +18,6 @@ public class LCA <Key extends Comparable <Key>, Value>{
 
 	}
 	
-	/**
-	 *  Search BST for given key.
-	 *  Does there exist a key-value pair with given key?
-	 *
-	 *  @param key the search key
-	 *  @return true if key is found and false otherwise
-	 */
-	public boolean contains(Key key) {
-		return get(key) != null;
-	}
-
-	
-	
 	public boolean isEmpty()
 	{
 		return size() == 0;
