@@ -21,4 +21,16 @@ public class DAG {
 	        adj[v] = new ArrayList<Integer>();
 	    }              
 	}
+	
+	//Returns current vertex
+	public int V() {
+		return V;	
+	}
+	
+	public int E() {
+        return E;
+    }
+
+	
+	
 }
