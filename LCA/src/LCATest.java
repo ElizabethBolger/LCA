@@ -8,6 +8,5 @@ class LCATest {
 	void test() {
 		fail("Not yet implemented");
 	}
-	
 
 }
