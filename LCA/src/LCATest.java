@@ -117,6 +117,18 @@ public class LCATest {
 				"(((()1())2(()4(()5())))7())", LCA.printKeysInOrder());
 	}
 
+	@Test
+	public void testPut() {
+		LCA<Integer, Integer> LCA = new LCA<Integer, Integer>();
+		LCA.put(1, null);
+		LCA.put(10, 1);
+		LCA.put(15,2);
+		LCA.put(15, 15);	 
+
+		assertEquals("Putting nodes", "(()10(()15()))", LCA.printKeysInOrder());
+	}
+
+	
 
 
 }
