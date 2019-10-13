@@ -230,6 +230,28 @@ public class LCA <Key extends Comparable <Key>, Value>{
          return node.key;
  	}
  	
+	public String printKeysInOrder() {
+		String res= "";
+		if (isEmpty()){
+			return res += "()";
+		}
+		else {
+			return res = printKeysInOrder(root);
+		}
+	
+	}
+	
+	 private String printKeysInOrder(Node node) {
+		 String res = "";
+		 if (node == null) {
+			 return res += "()";
+		 }
+		 
+		 else {
+			return res += ("(" + printKeysInOrder(node.left) + node.key.toString() + printKeysInOrder(node.right) + ")");
+		 }
+		 
+	 }
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
