@@ -215,7 +215,7 @@ public class LCA <Key extends Comparable <Key>, Value>{
  		if (node.key == key1) {
  			return node.key;
  		}
- 		if (node.key == key1) {
+ 		if (node.key == key2) {
  			return node.key;
  		}
  		int cmp1 = node.key.compareTo(key1);
