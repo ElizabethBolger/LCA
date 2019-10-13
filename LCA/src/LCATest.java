@@ -143,6 +143,9 @@ public class LCATest {
 		assertEquals("Testing right then left", "15", LCA.get(9).toString());
 		assertEquals("Testing root", "1", LCA.get(10).toString());
 	}
+	
+
+
 
 
 }
