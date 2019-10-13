@@ -177,7 +177,7 @@ public class LCATest {
 		LCA<Integer, Integer> LCA = new LCA<Integer, Integer>();
 		assertEquals("Testing median", null, LCA.median());
 		LCA.put(7, 7); 
-		assertEquals("Testing median", "7", LCA.median());
+		assertEquals("Testing median", "7", LCA.median().toString());
 		LCA.put(8, 8);   
 		LCA.put(3, 3);  
 		assertEquals("Testing median", "7", LCA.median().toString());
@@ -192,7 +192,7 @@ public class LCATest {
 	@Test
 	public void testContains() {
 		LCA<Integer, Integer> LCA = new LCA<Integer, Integer>();
-		assertEquals("Testing contains", true, LCA.contains(1));
+		assertEquals("Testing contains", false, LCA.contains(1));
 		LCA.put(7, 7); 
 		assertEquals("Testing contains", true, LCA.contains(7));
 	}
