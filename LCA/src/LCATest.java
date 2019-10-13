@@ -128,7 +128,22 @@ public class LCATest {
 		assertEquals("Putting nodes", "(()10(()15()))", LCA.printKeysInOrder());
 	}
 
-	
+	@Test
+	public void testGet() {
+		LCA<Integer, Integer> LCA = new LCA<Integer, Integer>();
+		assertEquals("Testing empty", false, LCA.contains(5));
+		LCA.put(1, null);
+		LCA.put(10, 1);
+		LCA.put(5, 9);
+		LCA.put(15,2);
+		LCA.put(9, 15);	 
+
+		assertEquals("Testing left", "9", LCA.get(5).toString());
+		assertEquals("Testing right then right", "2", LCA.get(15).toString());
+		assertEquals("Testing right then left", "15", LCA.get(9).toString());
+		assertEquals("Testing root", "1", LCA.get(10).toString());
+	}
+
 
 
 }
