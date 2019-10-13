@@ -144,6 +144,18 @@ public class LCATest {
 		assertEquals("Testing root", "1", LCA.get(10).toString());
 	}
 	
+	@Test
+	public void testHeight() {
+	}
+	
+	
+	@Test
+	public void testMedian() {
+	}
+	
+	@Test
+	public void testContains() {
+	}
 
 
 }
