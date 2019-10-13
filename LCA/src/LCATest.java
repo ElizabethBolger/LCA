@@ -6,7 +6,7 @@ public class LCATest {
 
 	@Test
 	public void test() {
-		fail("Not yet implemented");
+		fail("Not yet implemnted");
 	}
 
 	
