@@ -18,11 +18,6 @@ public class LCA <Key extends Comparable <Key>, Value>{
 
 	}
 	
-	public boolean contains()
-	{
-		return true;
-	}
-	
 	public boolean isEmpty()
 	{
 		return size() == 0;
