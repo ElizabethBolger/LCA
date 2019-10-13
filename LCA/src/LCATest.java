@@ -6,7 +6,7 @@ public class LCATest {
 
 	@Test
 	public void test() {
-		fail("Not yet implemented");
+		fail("Not yet implemnted");
 	}
 
 	
@@ -127,8 +127,6 @@ public class LCATest {
 
 		assertEquals("Putting nodes", "(()10(()15()))", LCA.printKeysInOrder());
 	}
-
-	
 
 
 }
