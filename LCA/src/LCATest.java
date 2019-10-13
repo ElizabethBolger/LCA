@@ -149,13 +149,6 @@ public class LCATest {
 	}
 	
 	
-	@Test
-	public void testMedian() {
-	}
-	
-	@Test
-	public void testContains() {
-	}
 
 
 }
