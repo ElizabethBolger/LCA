@@ -90,10 +90,39 @@ public class DAGTest {
 		lca.addEdge(3, 4);
 		lca.addEdge(4, 6);
 		lca.addEdge(5, 6);
+		lca.addEdge(6, 8);
+		lca.addEdge(5, 7);
+		lca.addEdge(7, 8);
+		lca.addEdge(8, 9);
 
 		assertEquals("Finding LCA for 4 and 5", 1, lca.findLCA(5, 4));
+		assertEquals("Finding LCA for 7 and 8", 7, lca.findLCA(8, 7));
+		assertEquals("Finding LCA for 6 and 8", 6, lca.findLCA(6, 8));
+		assertEquals("Special case where both parameters are same vertex", 2, lca.findLCA(2,2));
+	
 	}
 	
+	@Test
+	public void testLCAForNoCommonAncestors(){
+		DAG lca2 = new DAG(11);
+		//-----1----5----
+		//---0-|---/-----
+		//-----2--3---4--
+		lca2.addEdge(0, 1);
+		lca2.addEdge(0, 2);
+		lca2.addEdge(1, 2);
+		lca2.addEdge(2, 3);
+		lca2.addEdge(3, 4);
+		lca2.addEdge(1, 5);
+		lca2.addEdge(3, 5);
 
+		//Check it works ok
+		assertEquals("Finding LCA when there is no LCA", 0, lca2.findLCA(3, 1));
+		assertEquals("", 2, lca2.findLCA(3, 2));
+		assertEquals("", 3, lca2.findLCA(4, 5));
+
+		//Check for no common ancestors
+		assertEquals("Finding LCA when one node doesnt exist", -1, lca2.findLCA(7, 3));
+	}
 
 }
