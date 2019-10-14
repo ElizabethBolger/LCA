@@ -4,11 +4,16 @@ import org.junit.Test;
 
 public class LCATest {
 
+	//test cases for an empty binary tree.
 	@Test
-	public void test() {
-		fail("Not yet implemnted");
+	public void testEmptyBT()
+	{
+		LCA<Integer, Integer> bst = new LCA<Integer, Integer>();
+		
+		// test it returns null for the LCA of an empty BT, where root has not been defined 
+		assertNull(bst.lowestCommonAncestor(bst.root, 0, 0));
 	}
-
+	
 	
 	@Test
 	public void testLCA() {
