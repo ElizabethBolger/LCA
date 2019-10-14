@@ -24,7 +24,6 @@ public class DAGTest {
 		assertEquals("",ans, test.adj(4).toString());
 	}
 
-<<<<<<< HEAD
 	@Test
 	public void testAddEdge(){
 		DAG test4 = new DAG(5);
