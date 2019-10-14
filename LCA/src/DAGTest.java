@@ -24,6 +24,7 @@ public class DAGTest {
 		assertEquals("",ans, test.adj(4).toString());
 	}
 
+<<<<<<< HEAD
 	@Test
 	public void testAddEdge(){
 		DAG test4 = new DAG(5);
@@ -49,5 +50,6 @@ public class DAGTest {
 		//Can't make a directed graph with less than 0 vertices
 		DAG test3 = new DAG(-5);
 	}
+
 
 }

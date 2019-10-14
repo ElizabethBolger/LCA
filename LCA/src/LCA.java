@@ -17,6 +17,7 @@ public class LCA <Key extends Comparable <Key>, Value>{
 		}
 
 	}
+<<<<<<< HEAD
 
 	public boolean contains(Key key) {
 		return get(key) != null;
@@ -28,6 +29,14 @@ public class LCA <Key extends Comparable <Key>, Value>{
 		return true;
 	}
 
+=======
+	
+	public boolean contains(Key key) {
+		return get(key) != null;
+	}
+
+	
+>>>>>>> refs/remotes/origin/master
 	public boolean isEmpty()
 	{
 		return size() == 0;
