@@ -49,6 +49,27 @@ public class DAGTest {
 		//Can't make a directed graph with less than 0 vertices
 		DAG test3 = new DAG(-5);
 	}
+	
+	//Directed graph isnt necessary directed acyclic graph, so will need to ensure it is a DAG.
+	@Test
+	public void testsForCycle(){
+		DAG cyclic = new DAG(20);
+		cyclic.addEdge(0, 1);
+		cyclic.addEdge(1, 2);
+		cyclic.addEdge(2, 0);
+
+
+		DAG acyclic = new DAG(20);
+		acyclic.addEdge(0, 1);
+		acyclic.addEdge(1, 3);
+		acyclic.addEdge(2, 4);
+		//Parameter is first vertex
+		acyclic.findCycle(0);
+		//No Cycle,return false
+		assertFalse(acyclic.hasCycle());
+	}
+
+	
 
 
 }
