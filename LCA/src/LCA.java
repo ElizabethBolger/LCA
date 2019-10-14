@@ -17,19 +17,17 @@ public class LCA <Key extends Comparable <Key>, Value>{
 		}
 
 	}
-	
-<<<<<<< master
+
 	public boolean contains(Key key) {
 		return get(key) != null;
 	}
 
-=======
+
 	public boolean contains()
 	{
 		return true;
 	}
->>>>>>> 851612e f
-	
+
 	public boolean isEmpty()
 	{
 		return size() == 0;
