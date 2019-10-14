@@ -58,6 +58,11 @@ public class DAGTest {
 		cyclic.addEdge(1, 2);
 		cyclic.addEdge(2, 0);
 
+		//Parameter is first vertex
+		cyclic.findCycle(0);
+
+		//Cycle from 0 - 1 - 2 - 0, should return true.
+		assertTrue(cyclic.hasCycle());
 
 		DAG acyclic = new DAG(20);
 		acyclic.addEdge(0, 1);
