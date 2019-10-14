@@ -75,6 +75,25 @@ public class DAGTest {
 	}
 
 	
+	//testing find LCA function
+	@Test
+	public void testLCA(){
+		DAG lca = new DAG(10);
+
+		//--------2---5----7--
+		//---0--1-------6----8
+		//--------3---4-------
+		lca.addEdge(0, 1);
+		lca.addEdge(1, 2);
+		lca.addEdge(1, 3);
+		lca.addEdge(2, 5);
+		lca.addEdge(3, 4);
+		lca.addEdge(4, 6);
+		lca.addEdge(5, 6);
+
+		assertEquals("Finding LCA for 4 and 5", 1, lca.findLCA(5, 4));
+	}
+	
 
 
 }
