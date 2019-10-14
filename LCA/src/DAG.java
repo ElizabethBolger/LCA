@@ -64,5 +64,19 @@ public class DAG {
 		}
 	}
 	
+
+	//Returns amount of directed edges from vertex v
+	public int outdegree(int v) {
+		if(validateVertex(v)<0){
+			return -1;
+		}
+		else{
+			return v;
+		}
+    }
+	
+	
+	
+	
 	
 }
