@@ -53,7 +53,7 @@ public class DAG {
 	}
 	
 	private int validateVertex(int v) {
-        if (v < 0 | v >= V)
+        if (v < 0 || v >= V)
         	return -1;
         else
         	return 1;}
@@ -61,7 +61,7 @@ public class DAG {
 	
 	//Returns amount of directed edges incident to vertex v
 	public int indegree(int v) {
-		if(validateVertex(v)==0){
+		if(validateVertex(v)<0){
 			return -1;
 		}
 		else{
@@ -76,7 +76,7 @@ public class DAG {
 			return -1;
 		}
 		else{
-			return v;
+			return adj[v].size();
 		}
     }
 	
