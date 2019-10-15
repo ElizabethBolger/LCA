@@ -124,5 +124,37 @@ public class DAGTest {
 		//Check for no common ancestors
 		assertEquals("Finding LCA when one node doesnt exist", -1, lca2.findLCA(7, 3));
 	}
+	
+	
+	//unique case where graph is just a digraph but no acyclic!
+	@Test
+	public void testLCAForNonDAG(){
+		DAG lca3 = new DAG(11);
+		//---0
+		//--|-\
+		//---\-\
+		//----2--3
 
+		//0 - 2 - 3 make a cycle
+
+		lca3.addEdge(0, 1);
+		lca3.addEdge(0, 2);
+		lca3.addEdge(2, 3);
+		lca3.addEdge(3, 0);
+		lca3.addEdge(3, 4);
+
+		//Should return -1 if graph is not a DAG
+		assertEquals("", -1, lca3.findLCA(2, 3));
+		assertEquals("", -1, lca3.findLCA(3, 4));
+		assertEquals("", -1, lca3.findLCA(1, 2));
+		assertEquals("", -1, lca3.findLCA(0, 3));
+		assertEquals("", -1, lca3.findLCA(1, 3));
+
+	}
+	
+	@Test
+	public void testLCAforEmpty() {
+		DAG lca = new DAG(10);
+		assertEquals("Testing LCA is -1", -1, lca.findLCA(1, 2));
+	}
 }
