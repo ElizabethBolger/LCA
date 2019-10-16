@@ -206,6 +206,25 @@ public class LCATest {
 		assertEquals("Testing contains", true, LCA.contains(7));
 	}
 	
+	//This test ensures null is returned if we are asked to find the LCA of two values that are not present 
+	//in the BT. 
+	@Test 
+	public void testInvalidElements()
+	{
+		LCA<Integer, Integer> LCA = new LCA<Integer, Integer>();
+		LCA.put(1, null);
+		LCA.put(10, 1);
+		LCA.put(5, 9);
+		LCA.put(15,2);
+		LCA.put(9, 15);	 
+		//Only one of the nodes we are finding the LCA of is defined in the Binary Tree
+		assertEquals("Testing invalid input", false, LCA.contains(1000));
+	}
+	
+	
+	
+	
+	
 	
 
 
