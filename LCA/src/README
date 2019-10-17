@@ -1,0 +1,42 @@
+Lowest Common Ancestor
+
+
+
+Explanation of the LCA
+
+The lowest common ancestor (LCA) of two nodes v and w in a tree is the lowest node that has both v and w as descendants
+
+Some of the tests I am going to be looking for:
+
+Tests
+
+Check for the Lowest Common Ancestory
+
+- Test the constructor
+
+- Test a null tree
+
+- Test a small tree(at least 2 nodes - including root)
+
+- Test same node/elements for LCA
+
+- Test for non existing nodes in tree
+
+
+
+Explanation of a DAG
+
+The directed graph will have nodes pointing to one and other similar to the binary tree above except they will be joining other nodes from different branches at an early or later stage. Not all nodes have edges(connections) leading into them(known as indegree) and not all have edges leading out of them(known as outdegree). A directed acyclic graph will be the same except once a node/vertex is visited, there should be no ability to return to this node(ie there is no cycle within the graph). There must be atleast one vertex/node that has 0 indegrees.
+
+
+
+Tests
+
+1 - Test the constructor
+
+2 - Test for when adding/connecting two nodes together
+
+3 - Test for when disconnecting two nodes from one and other
+
+
+Initial LCA commit called 'first few methods for BST'
